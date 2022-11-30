@@ -16,7 +16,7 @@
       </p>
     </div>
     <div class="container-fluid d-flex flex-row p-3 border border-secondary">
-      <div id="sideBar" class="p-3 border border-success">This is sidebar
+      <div id="sideBar" class="p-3 border border-success">
         <form>
           <div class="form-group">
             <label for="inputSearch" class="font-weight-bold">Search for a City:</label>
@@ -35,7 +35,15 @@
           <button type="submit" class="btn btn-secondary btn-block">Prev8</button>
         </div>
       </div>
-      <div id="pageContent" class="p-3 border border-success">This is content</div>
+      <div id="pageContent" class="p-3 border border-success">
+        <div class="border">
+          <h1 id="infoHeader"><span id="cityDisplay">Atlanta</span> <span id="dateDisplay">(11/30/2022)</span> <span id="weatherStatusDisplay">[sun]</span></h1>
+          <h2 id="tempHeader">Temp: <span id="tempDisplay"></span></h2>
+          <h2 id="windHeader">Wind: <span id="windDisplay"></span></h2>
+          <h2 id="humidityHeader">Humidity: <span id="humidityDisplay"></span></h2>
+        </div>
+
+      </div>
     </div>
     <script src="./assets/js/script.js"></script>
   </body>
