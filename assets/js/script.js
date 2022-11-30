@@ -13,8 +13,13 @@ function displaySearchHistory() {
     for(let i = prevSearches.length; i > 0; i--){
         let button = document.createElement("button");
         button.setAttribute("type", "submit");
-        button.setAttribute("class", "btn btn-secondary btn-block")
+        button.setAttribute("class", "btn btn-secondary btn-block");
         button.textContent = prevSearches[i-1];
+        button.addEventListener("click", event => {
+            event.preventDefault();
+            console.log("Searching for " + button.textContent);
+            //do search here
+        })
         searchHistoryButtonDiv.appendChild(button);
     }
 }
