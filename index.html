@@ -10,13 +10,21 @@
     <title>Weather Dashboard</title>
   </head>
   <body class="d-flex flex-column p-3 border border-primary">
-    <div class="container">
+    <div class="container-fluid">
       <p class="text-center border border-success">
         Weather Dashboard
       </p>
     </div>
-    <div class="container d-flex flex-row p-3 border border-secondary">
-      <div id="sideBar" class="p-3 border border-success">This is sidebar</div>
+    <div class="container-fluid d-flex flex-row p-3 border border-secondary">
+      <div id="sideBar" class="p-3 border border-success">This is sidebar
+        <form>
+          <div class="form-group">
+            <label for="inputSearch">Search for a City:</label>
+            <input type="text" class="form-control" id="inputSearch" placeholder="San Diego">
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">Search</button>
+        </form>
+      </div>
       <div id="pageContent" class="p-3 border border-success">This is content</div>
     </div>
     <script src="./assets/js/script.js"></script>
