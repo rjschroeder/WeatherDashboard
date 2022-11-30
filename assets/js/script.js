@@ -8,14 +8,16 @@ let humidityDisplaySpan = document.getElementById("humidityDisplay");
 let forecastDiv = document.getElementById("forecastDiv");
 
 function displaySearchHistory() {
-    let prevSearches = JSON.stringify(window.localStorage.getItem("searchHistory")) || [];
+    let prevSearches = JSON.parse(window.localStorage.getItem("searchHistory")) || [];
     searchHistoryButtonDiv.textContent = "";
-    for(let i = prevSearches.length; i < 0; i--){
+    for(let i = prevSearches.length; i > 0; i--){
         let button = document.createElement("button");
         button.setAttribute("type", "submit");
         button.setAttribute("class", "btn btn-secondary btn-block")
-        button.textContent = prevSearches[i];
+        button.textContent = prevSearches[i-1];
         searchHistoryButtonDiv.appendChild(button);
     }
 }
+let temp = ["Atlanta", "Austin", "Amarillo", "Anaheim"]
+window.localStorage.setItem("searchHistory", JSON.stringify(temp));
 displaySearchHistory();
