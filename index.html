@@ -38,18 +38,47 @@
       <div id="pageContent" class="p-3 border border-success">
         <div class="border">
           <h1 id="infoHeader"><span id="cityDisplay">Atlanta</span> <span id="dateDisplay">(11/30/2022)</span> <span id="weatherStatusDisplay">[sun]</span></h1>
-          <h2 id="tempHeader">Temp: <span id="tempDisplay"></span></h2>
-          <h2 id="windHeader">Wind: <span id="windDisplay"></span></h2>
-          <h2 id="humidityHeader">Humidity: <span id="humidityDisplay"></span></h2>
+          <h2 id="tempHeader">Temp: <span id="tempDisplay"></span> °F</h2>
+          <h2 id="windHeader">Wind: <span id="windDisplay"></span> MPH</h2>
+          <h2 id="humidityHeader">Humidity: <span id="humidityDisplay"> %</span></h2>
         </div>
         <div class="p-3 border border-success">
           <h2>5-Day Forecast:</h2>
           <div id="forecastDiv" class="d-flex flex-row p-3">
-            <div id="day1" class="p-2 m-2 bg-dark text-white" style="width: 20%;">day1</div>
-            <div id="day2" class="p-2 m-2 bg-dark text-white" style="width: 20%;">day2</div>
-            <div id="day3" class="p-2 m-2 bg-dark text-white" style="width: 20%;">day3</div>
-            <div id="day4" class="p-2 m-2 bg-dark text-white" style="width: 20%;">day4</div>
-            <div id="day5" class="p-2 m-2 bg-dark text-white" style="width: 20%;">day5</div>
+            <div id="day1" class="p-2 m-2 bg-dark text-white" style="width: 20%;">
+              <span id="day1DateDisplay"></span>
+              <span id="day1StatusDisplay"></span>
+              <p>Temp: <span id="day1TempDisplay"></span> °F</p>
+              <p>Wind: <span id="day1WindDisplay"></span> MPH</p>
+              <p>Humidity: <span id="day1HumidityDisplay"></span> %</p>
+            </div>
+            <div id="day2" class="p-2 m-2 bg-dark text-white" style="width: 20%;">
+              <span id="day2DateDisplay"></span>
+              <span id="day2StatusDisplay"></span>
+              <p>Temp: <span id="day2TempDisplay"></span> °F</p>
+              <p>Wind: <span id="day2WindDisplay"></span> MPH</p>
+              <p>Humidity: <span id="day2HumidityDisplay"></span> %</p></div>
+            <div id="day3" class="p-2 m-2 bg-dark text-white" style="width: 20%;">
+              <span id="day3DateDisplay"></span>
+              <span id="day3StatusDisplay"></span>
+              <p>Temp: <span id="day3TempDisplay"></span> °F</p>
+              <p>Wind: <span id="day3WindDisplay"></span> MPH</p>
+              <p>Humidity: <span id="day3HumidityDisplay"></span> %</p>
+            </div>
+            <div id="day4" class="p-2 m-2 bg-dark text-white" style="width: 20%;">
+              <span id="day4DateDisplay"></span>
+              <span id="day4StatusDisplay"></span>
+              <p>Temp: <span id="day4TempDisplay"></span> °F</p>
+              <p>Wind: <span id="day4WindDisplay"></span> MPH</p>
+              <p>Humidity: <span id="day4HumidityDisplay"></span> %</p>
+            </div>
+            <div id="day5" class="p-2 m-2 bg-dark text-white" style="width: 20%;">
+              <span id="day5DateDisplay"></span>
+              <span id="day5StatusDisplay"></span>
+              <p>Temp: <span id="day5TempDisplay"></span> °F</p>
+              <p>Wind: <span id="day5WindDisplay"></span> MPH</p>
+              <p>Humidity: <span id="day5HumidityDisplay"></span> %</p>
+            </div>
           </div>
         </div>
       </div>
