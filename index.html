@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"/>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <title>Weather Dashboard</title>
+  </head>
+  <body class="d-flex flex-column p-3">
+    <div class="container-fluid">
+      <p class="text-center p-1 text-white font-weight-bold bg-primary">
+        Weather Dashboard
+      </p>
+    </div>
+    <div class="container-fluid d-flex flex-row p-3">
+      <div id="sideBar" class="p-3">
+        <form>
+          <div class="form-group">
+            <label for="inputSearch" class="font-weight-bold">Search for a City:</label>
+            <input type="text" class="form-control" id="inputSearch" placeholder="San Diego">
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">Search</button>
+        </form>
+        <div class="border-top mt-3 py-3">
+          <button type="submit" class="btn btn-secondary btn-block">Prev1</button>
+          <button type="submit" class="btn btn-secondary btn-block">Prev2</button>
+          <button type="submit" class="btn btn-secondary btn-block">Prev3</button>
+          <button type="submit" class="btn btn-secondary btn-block">Prev4</button>
+          <button type="submit" class="btn btn-secondary btn-block">Prev5</button>
+          <button type="submit" class="btn btn-secondary btn-block">Prev6</button>
+          <button type="submit" class="btn btn-secondary btn-block">Prev7</button>
+          <button type="submit" class="btn btn-secondary btn-block">Prev8</button>
+        </div>
+      </div>
+      <div id="pageContent" class="p-3">
+        <div class="border rounded">
+          <h1 id="infoHeader"><span id="cityDisplay">Atlanta</span> <span id="dateDisplay">(11/30/2022)</span> <span id="weatherStatusDisplay">[sun]</span></h1>
+          <h2 id="tempHeader">Temp: <span id="tempDisplay"></span> °F</h2>
+          <h2 id="windHeader">Wind: <span id="windDisplay"></span> MPH</h2>
+          <h2 id="humidityHeader">Humidity: <span id="humidityDisplay"> %</span></h2>
+        </div>
+        <div class="p-3">
+          <h2>5-Day Forecast:</h2>
+          <div id="forecastDiv" class="d-flex flex-row p-3">
+            <div id="day1" class="p-2 m-2 bg-dark text-white rounded" style="width: 20%;">
+              <p><span id="day1DateDisplay">(12/1/2022)</span></p>
+              <p><span id="day1StatusDisplay">[sun]</span></p>
+              <p>Temp: <span id="day1TempDisplay">74</span> °F</p>
+              <p>Wind: <span id="day1WindDisplay">2.34</span> MPH</p>
+              <p>Humidity: <span id="day1HumidityDisplay">43</span> %</p>
+            </div>
+            <div id="day2" class="p-2 m-2 bg-dark text-white rounded" style="width: 20%;">
+              <p><span id="day2DateDisplay">(12/2/2022)</span></p>
+              <p><span id="day2StatusDisplay">[sun]</span></p>
+              <p>Temp: <span id="day2TempDisplay">76</span> °F</p>
+              <p>Wind: <span id="day2WindDisplay">21.2</span> MPH</p>
+              <p>Humidity: <span id="day2HumidityDisplay">12</span> %</p>
+            </div>
+            <div id="day3" class="p-2 m-2 bg-dark text-white rounded" style="width: 20%;">
+              <p><span id="day3DateDisplay">(12/3/2022)</span></p>
+              <p><span id="day3StatusDisplay">[sun]</span></p>
+              <p>Temp: <span id="day3TempDisplay">78</span> °F</p>
+              <p>Wind: <span id="day3WindDisplay">2.00</span> MPH</p>
+              <p>Humidity: <span id="day3HumidityDisplay">14</span> %</p>
+            </div>
+            <div id="day4" class="p-2 m-2 bg-dark text-white rounded" style="width: 20%;">
+              <p><span id="day4DateDisplay">(12/4/2022)</span></p>
+              <p><span id="day4StatusDisplay">[sun]</span></p>
+              <p>Temp: <span id="day4TempDisplay">76</span> °F</p>
+              <p>Wind: <span id="day4WindDisplay">4.33</span> MPH</p>
+              <p>Humidity: <span id="day4HumidityDisplay">14</span> %</p>
+            </div>
+            <div id="day5" class="p-2 m-2 bg-dark text-white rounded" style="width: 20%;">
+              <p><span id="day5DateDisplay">(12/5/2022)</span></p>
+              <p><span id="day5StatusDisplay">[sun]</span></p>
+              <p>Temp: <span id="day5TempDisplay">75</span> °F</p>
+              <p>Wind: <span id="day5WindDisplay">1.02</span> MPH</p>
+              <p>Humidity: <span id="day5HumidityDisplay">16</span> %</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./assets/js/script.js"></script>
+  </body>
+</html>
