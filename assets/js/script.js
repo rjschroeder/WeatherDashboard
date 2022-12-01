@@ -97,6 +97,7 @@ function renderForecast(forecastData) {
 }
 
 displaySearchHistory();
+fetchWeather("San Diego");
 
 searchButton.addEventListener("click", event => {
     event.preventDefault();
