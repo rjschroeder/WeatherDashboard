@@ -17,7 +17,7 @@ function displaySearchHistory() {
         button.textContent = prevSearches[i-1];
         button.addEventListener("click", event => {
             console.log("Searching for " + button.textContent);
-            getCoords(prevSearches[i-1]);
+            fetchWeather(prevSearches[i-1]);
         })
         searchHistoryButtonDiv.appendChild(button);
     }
@@ -35,31 +35,12 @@ function addToSearchHistory(city) {
 }
 
 function fetchWeather(city) {
-    let { lat } = city;
-    let { lon } = city;
-    fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&units=imperial&exclude=minutely,hourly&APPID=c4d23eaac43df15072a6258b8a61f3d9`)
+    fetch(`https://api.weatherapi.com/v1/current.json?key=ffa335b573f34e679d745524220112&q=${city}&aqi=yes`)
         .then(function (response) {
             return response.json();
         })
         .then(function (data) {
-            console.log("data here:" + data);
-        })
-        .catch(function (error) {
-            console.error(error);
-        })
-}
-
-function getCoords(city) {
-    fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=5&APPID=c4d23eaac43df15072a6258b8a61f3d9`)
-        .then(function (response) {
-            return response.json();
-        })
-        .then(function (data) {
-            if(data[0]) {
-                fetchWeather(data[0]);
-            } else {
-                console.log(city + "was not found.");
-            }
+            console.log(data["location"], data["current"]);
         })
         .catch(function (error) {
             console.error(error);
@@ -74,7 +55,7 @@ searchButton.addEventListener("click", event => {
     event.preventDefault();
     if(searchInput.value.trim() !== "") {
         addToSearchHistory(searchInput.value);
-        getCoords(searchInput.value.trim());
+        fetchWeather(searchInput.value.trim());
         searchInput.value = "";
     }
 })
