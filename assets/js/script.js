@@ -22,6 +22,23 @@ function displaySearchHistory() {
         searchHistoryButtonDiv.appendChild(button);
     }
 }
-let temp = ["Atlanta", "Austin", "Amarillo", "Anaheim"]
-window.localStorage.setItem("searchHistory", JSON.stringify(temp));
+
+function addToSearchHistory(city) {
+    let prevSearches = JSON.parse(window.localStorage.getItem("searchHistory")) || [];
+    prevSearches = prevSearches.filter(e => e !== city);
+    if (prevSearches.length > 7) {
+        prevSearches.shift();
+    }
+    prevSearches.push(city);
+    window.localStorage.setItem("searchHistory", JSON.stringify(prevSearches));
+    displaySearchHistory();
+}
+
+// let temp = ["Atlanta", "Austin", "Amarillo", "Anaheim"]
+// window.localStorage.setItem("searchHistory", JSON.stringify(temp));
 displaySearchHistory();
+
+searchButton.addEventListener("click", event => {
+    event.preventDefault();
+    addToSearchHistory(searchInput.value);
+})
