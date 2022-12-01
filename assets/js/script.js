@@ -37,7 +37,7 @@ function addToSearchHistory(city) {
 function fetchWeather(city) {
     let { lat } = city;
     let { lon } = city;
-    fetch(`https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&units=imperial&exclude=minutely,hourly&APPID=c4d23eaac43df15072a6258b8a61f3d9`)
+    fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&units=imperial&exclude=minutely,hourly&APPID=c4d23eaac43df15072a6258b8a61f3d9`)
         .then(function (response) {
             return response.json();
         })
