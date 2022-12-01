@@ -45,7 +45,7 @@ function fetchWeather(city) {
         .then(function (data) {
             console.log(data["forecast"]);
             renderCurrent(data["location"], data["current"]);
-            renderForecast(data["forecast"]);
+            renderForecast(data["forecast"]["forecastday"]);
         })
         .catch(function (error) {
             console.error(error);
@@ -66,8 +66,8 @@ function renderCurrent(locationData, currentData) {
 
 function renderForecast(forecastData) {
     forecastDiv.textContent = "";
-    for (let i = 1; i<forecastData["forecastday"].length; i++) {
-        console.log(forecastData["forecastday"][i]);
+    for (let i = 1; i<forecastData.length; i++) {
+        console.log(forecastData[i]);
     }
 }
 
