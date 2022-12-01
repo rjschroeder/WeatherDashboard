@@ -17,7 +17,7 @@ function displaySearchHistory() {
         button.textContent = prevSearches[i-1];
         button.addEventListener("click", event => {
             console.log("Searching for " + button.textContent);
-            //do search here
+            getCoords(prevSearches[i-1]);
         })
         searchHistoryButtonDiv.appendChild(button);
     }
@@ -37,12 +37,12 @@ function addToSearchHistory(city) {
 function fetchWeather(city) {
     let { lat } = city;
     let { lon } = city;
-    fetch(`api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&units=imperial&exclude=minutely,hourly&APPID=c4d23eaac43df15072a6258b8a61f3d9`)
+    fetch(`https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&units=imperial&exclude=minutely,hourly&APPID=c4d23eaac43df15072a6258b8a61f3d9`)
         .then(function (response) {
             return response.json();
         })
         .then(function (data) {
-            //display data here
+            console.log("data here:" + data);
         })
         .catch(function (error) {
             console.error(error);
@@ -50,7 +50,7 @@ function fetchWeather(city) {
 }
 
 function getCoords(city) {
-    fetch(`api.openweathermap.org/geo/1.0/direct?q=${city}&limit=5&APPID=c4d23eaac43df15072a6258b8a61f3d9`)
+    fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=5&APPID=c4d23eaac43df15072a6258b8a61f3d9`)
         .then(function (response) {
             return response.json();
         })
@@ -74,6 +74,7 @@ searchButton.addEventListener("click", event => {
     event.preventDefault();
     if(searchInput.value.trim() !== "") {
         addToSearchHistory(searchInput.value);
+        getCoords(searchInput.value.trim());
         searchInput.value = "";
     }
 })
