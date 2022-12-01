@@ -16,7 +16,6 @@ function displaySearchHistory() {
         button.setAttribute("class", "btn btn-secondary btn-block");
         button.textContent = prevSearches[i-1];
         button.addEventListener("click", event => {
-            event.preventDefault();
             console.log("Searching for " + button.textContent);
             //do search here
         })
