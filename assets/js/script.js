@@ -43,8 +43,8 @@ function fetchWeather(city) {
             return response.json();
         })
         .then(function (data) {
-            console.log(data["location"], data["current"], data["forecast"]);
             renderCurrent(data["location"], data["current"]);
+            renderForecast(data["forecast"]);
         })
         .catch(function (error) {
             console.error(error);
@@ -61,6 +61,10 @@ function renderCurrent(locationData, currentData) {
     tempDisplaySpan.textContent = `${currentData["temp_f"]}`
     windDisplaySpan.textContent = `${currentData["wind_mph"]}`
     humidityDisplaySpan.textContent = `${currentData["humidity"]}`
+}
+
+function renderForecast(forecastData) {
+
 }
 
 displaySearchHistory();
