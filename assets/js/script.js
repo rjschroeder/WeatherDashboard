@@ -66,9 +66,9 @@ function renderCurrent(locationData, currentData) {
 
 function renderForecast(forecastData) {
     forecastDiv.textContent = "";
-    forecastData["forecastday"].forEach(element => {
-        console.log(element);
-    });
+    for (let i = 1; i<forecastData["forecastday"].length; i++) {
+        console.log(forecastData["forecastday"][i]);
+    }
 }
 
 displaySearchHistory();
