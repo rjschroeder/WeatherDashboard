@@ -1,6 +1,8 @@
 let searchInput = document.getElementById("inputSearch");
 let searchButton = document.getElementById("searchButton");
 let searchHistoryButtonDiv = document.getElementById("historyButtons");
+let dateDisplaySpan = document.getElementById("dateDisplay");
+let weatherStatusDisplaySpan = document.getElementById("weatherStatusDisplay");
 let cityDisplaySpan = document.getElementById("cityDisplay");
 let tempDisplaySpan = document.getElementById("tempDisplay");
 let windDisplaySpan = document.getElementById("windDisplay");
@@ -50,7 +52,12 @@ function fetchWeather(city) {
 }
 
 function renderCurrent(locationData, currentData) {
-    cityDisplaySpan.textContent = `${locationData["name"]}, ${locationData["region"]} (${locationData["localtime"]})`
+    cityDisplaySpan.textContent = `${locationData["name"]}, ${locationData["region"]}`
+    dateDisplaySpan.textContent = `(${locationData["localtime"].split(" ")[0]})`
+    let weatherStatusSymbol = document.createElement("img");
+    weatherStatusSymbol.setAttribute("src", `https:${currentData["condition"]["icon"]}`)
+    weatherStatusDisplaySpan.textContent = ""
+    weatherStatusDisplaySpan.appendChild(weatherStatusSymbol)
     tempDisplaySpan.textContent = `${currentData["temp_f"]}`
     windDisplaySpan.textContent = `${currentData["wind_mph"]}`
     humidityDisplaySpan.textContent = `${currentData["humidity"]}`
