@@ -34,6 +34,38 @@ function addToSearchHistory(city) {
     displaySearchHistory();
 }
 
+function fetchWeather(city) {
+    let { lat } = city;
+    let { lon } = city;
+    fetch(`api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&units=imperial&exclude=minutely,hourly&APPID=c4d23eaac43df15072a6258b8a61f3d9`)
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (data) {
+            //display data here
+        })
+        .catch(function (error) {
+            console.error(error);
+        })
+}
+
+function getCoords(city) {
+    fetch(`api.openweathermap.org/geo/1.0/direct?q=${city}&limit=5&APPID=c4d23eaac43df15072a6258b8a61f3d9`)
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (data) {
+            if(data[0]) {
+                fetchWeather(data[0]);
+            } else {
+                console.log(city + "was not found.");
+            }
+        })
+        .catch(function (error) {
+            console.error(error);
+        })
+}
+
 // let temp = ["Atlanta", "Austin", "Amarillo", "Anaheim"]
 // window.localStorage.setItem("searchHistory", JSON.stringify(temp));
 displaySearchHistory();
