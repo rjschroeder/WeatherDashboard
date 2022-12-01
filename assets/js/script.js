@@ -43,7 +43,6 @@ function fetchWeather(city) {
             return response.json();
         })
         .then(function (data) {
-            console.log(data["forecast"]);
             renderCurrent(data["location"], data["current"]);
             renderForecast(data["forecast"]["forecastday"]);
         })
@@ -67,7 +66,6 @@ function renderCurrent(locationData, currentData) {
 function renderForecast(forecastData) {
     forecastDiv.textContent = "";
     for (let i = 1; i<forecastData.length; i++) {
-        console.log(forecastData[i]);
         let cardContainer = document.createElement("div");
         cardContainer.setAttribute("class", "p-2 m-2 bg-dark text-white rounded");
         cardContainer.setAttribute("style", "width: 20%;");
