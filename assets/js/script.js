@@ -40,5 +40,8 @@ displaySearchHistory();
 
 searchButton.addEventListener("click", event => {
     event.preventDefault();
-    addToSearchHistory(searchInput.value);
+    if(searchInput.value.trim() !== "") {
+        addToSearchHistory(searchInput.value);
+        searchInput.value = "";
+    }
 })
