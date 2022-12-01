@@ -68,6 +68,19 @@ function renderForecast(forecastData) {
     forecastDiv.textContent = "";
     for (let i = 1; i<forecastData.length; i++) {
         console.log(forecastData[i]);
+        let cardContainer = document.createElement("div");
+        cardContainer.setAttribute("class", "p-2 m-2 bg-dark text-white rounded");
+        cardContainer.setAttribute("style", "width: 20%;");
+        
+        let dateElement = document.createElement("p");
+        dateElement.textContent = forecastData[i]["date"];
+        cardContainer.appendChild(dateElement);
+
+        let statusElement = document.createElement("img");
+        statusElement.setAttribute("src", `https:${forecastData[i]["day"]["condition"]["icon"]}`);
+        cardContainer.appendChild(statusElement);
+
+        forecastDiv.appendChild(cardContainer);
     }
 }
 
