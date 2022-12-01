@@ -80,6 +80,18 @@ function renderForecast(forecastData) {
         statusElement.setAttribute("src", `https:${forecastData[i]["day"]["condition"]["icon"]}`);
         cardContainer.appendChild(statusElement);
 
+        let tempElement = document.createElement("p");
+        tempElement.textContent = `Temp: ${forecastData[i]["day"]["avgtemp_f"]} °F`
+        cardContainer.appendChild(tempElement);
+
+        let windElement = document.createElement("p");
+        windElement.textContent = `Wind: ${forecastData[i]["day"]["maxwind_mph"]} MPH`
+        cardContainer.appendChild(windElement);
+
+        let humidElement = document.createElement("p");
+        humidElement.textContent = `Humidity: ${forecastData[i]["day"]["avghumidity"]} %`
+        cardContainer.appendChild(humidElement);
+
         forecastDiv.appendChild(cardContainer);
     }
 }
