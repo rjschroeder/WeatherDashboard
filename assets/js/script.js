@@ -42,10 +42,18 @@ function fetchWeather(city) {
         })
         .then(function (data) {
             console.log(data["location"], data["current"], data["forecast"]);
+            renderCurrent(data["location"], data["current"]);
         })
         .catch(function (error) {
             console.error(error);
         });
+}
+
+function renderCurrent(locationData, currentData) {
+    cityDisplaySpan.textContent = `${locationData["name"]}, ${locationData["region"]} (${locationData["localtime"]})`
+    tempDisplaySpan.textContent = `${currentData["temp_f"]}`
+    windDisplaySpan.textContent = `${currentData["wind_mph"]}`
+    humidityDisplaySpan.textContent = `${currentData["humidity"]}`
 }
 
 displaySearchHistory();
